@@ -3,10 +3,10 @@
 #include "binary_trees.h"
 
 /**
-* binary_tree_depth - number of level within binary tree
-* @tree: A pointer to the root node of the tree to traverse
-*
-* return: none
+ * binary_tree_depth - number of level within binary tree
+ * @tree: A pointer to the root node of the tree to traverse
+ *
+ * Return: the depth
 */
 size_t binary_tree_depth(const binary_tree_t *tree)
 {
@@ -33,7 +33,7 @@ size_t binary_tree_depth(const binary_tree_t *tree)
  * Return: a pointer to the lowest common ancestor node
  */
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
- const binary_tree_t *second)
+const binary_tree_t *second)
 {
 	size_t a, b;
 
