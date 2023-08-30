@@ -48,5 +48,7 @@ int is_complete_func(const binary_tree_t *tree, size_t index, size_t size)
 */
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
+	if (!tree)
+		return (0);
 	return (is_complete_func(tree, 0, binary_tree_size(tree)));
 }
