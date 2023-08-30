@@ -1,26 +1,23 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "binary_trees.h"
 
 /**
-* binary_tree_depth - number of level within binary tree
-* @tree: A pointer to the root node of the tree to traverse
-*
-* Return: none
+ * binary_tree_leaves - measures the size of a binary tree
+ * @tree: a pointer to the root node of the tree to measure the size
+ *
+ * Return: the size
 */
-size_t binary_tree_depth(const binary_tree_t *tree)
+size_t binary_tree_leaves(const binary_tree_t *tree)
 {
 	size_t counter = 0;
+	size_t l, r;
 
 	if (tree == NULL)
 		return (0);
-	if (tree->parent == NULL)
-		return (0);
 
-	while (tree->parent)
-	{
-		tree = tree->parent;
+	l = binary_tree_leaves(tree->left);
+	r = binary_tree_leaves(tree->right);
+	if(tree->left == NULL && tree->right == NULL)
 		counter++;
-	}
-	return (counter);
+	return (counter +l + r);
 }
